@@ -12,7 +12,7 @@ citation: 'coming soon'
 
 ### Authors
 
-**Yongkang Guo**\*, Yuan Yuan, Jinshan Zhang, Yuqing Kong, Zhihua Zhu, Zheng Cai
+**Yongkang Guo\***, Yuan Yuan, Jinshan Zhang, Yuqing Kong, Zhihua Zhu, Zheng Cai
 
 ### Abstract
 
