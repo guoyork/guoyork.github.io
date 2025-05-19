@@ -1,10 +1,9 @@
 ---
-title: "Algorithm Design and Analysis"
+title: "Probability theory and statistics in information science"
 collection: teaching
 type: "TA"
-permalink: /teaching/algdesign
+permalink: /teaching/statistics
 venue: "Peking University, Department of computer science and technology"
-date: 2021-03-01
+date: 2024-09-01
 location: "Beijing, China"
 ---
-

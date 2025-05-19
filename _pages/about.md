@@ -35,6 +35,7 @@ I am a forth-year PhD student at the School of Computer Science in Peking Univer
 
 ## Awards
 
+* 09/2023 Outstanding Scientific Research Award of School of Computer Science
 * 09/2020 John Hopcroft Scholarship of Peking University
 * 09/2020 Second-class Scholarship of Peking University
 * 09/2018 Third-class Scholarship of Peking University
