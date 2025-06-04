@@ -80,30 +80,30 @@ analytics:
 
 # Site Author
 author:
-  name             : "Yuxuan Lu"
+  name             : "Yongkang Guo"
   avatar           : "profile.png"
-  bio              : "Yuxuan Lu is a second-year PhD student at the School of Computer Science in Peking University. His research interests lie Information Elicitation, Blockchain and other subareas in Computational Economics."
+  bio              : "Yongkang Guo is a forth-year PhD student at the School of Computer Science in Peking University (2021-). I am advised by [Prof. Yuqing Kong](https://cfcs.pku.edu.cn/yuqkong/) and my research interests are Robust Aggregation, Information Design and other subareas in Computational Economics."
   location         : "Beijing, China"
   employer         :
   pubmed           :
-  googlescholar    : "https://scholar.google.com/citations?hl=en&user=w8h0b0EAAAAJ"
-  email            : "yx_lu@pku.edu.cn"
-  researchgate     : "https://www.researchgate.net/profile/Yuxuan-Lu-7"
-  uri              : "https://yxlu.me"
+  googlescholar    : 
+  email            : "yongkang_guo@pku.edu.cn"
+  researchgate     : 
+  uri              : "https://guoyork.github.io"
   bitbucket        :
   codepen          :
   dribbble         :
   flickr           :
   facebook         :
   foursquare       :
-  github           : "yx-lu"
+  github           : "guoyork"
   google_plus      :
   keybase          :
   instagram        :
   impactstory      : #"https://profiles.impactstory.org/u/xxxx-xxxx-xxxx-xxxx"
   lastfm           :
   linkedin         :
-  orcid            : "https://orcid.org/0000-0002-3935-7352"
+  orcid            : "https://orcid.org/0000-0003-2816-4149"
   pinterest        :
   soundcloud       :
   stackoverflow    : # http://stackoverflow.com/users/123456/username
