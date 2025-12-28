@@ -5,7 +5,7 @@
  * This file controls what is imported from /_sass
  *
  * Note that the files are processed in the order they are imported, so they are partly
-   sorted by the dependencies. Also, the first two lines of the file are required by Jekyll.
+ * sorted by the dependencies. Also, the first two lines of the file are required by Jekyll.
  */
 
 @import
@@ -41,3 +41,54 @@
     "vendor/font-awesome/brands",
     "vendor/magnific-popup/magnific-popup"
 ;
+
+/* ==========================================================================
+   CUSTOM ANIMATIONS (TECH STYLE)
+   ========================================================================== */
+
+.page__content {
+  /* Apply to paragraphs and list items */
+  p, li {
+    padding: 8px 12px;
+    margin-left: -12px; /* Offset the padding to keep alignment */
+    border: 1px solid transparent;
+    border-radius: 6px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    z-index: 1;
+    
+    /* Ensure list markers stay visible */
+    list-style-position: inside; 
+  }
+
+  /* Exclude nested lists from double-padding/margins if needed, 
+     but let's keep it simple for now. 
+     Fix list-style-position for li to avoid weird marker behavior inside the box */
+  li {
+    list-style-position: outside;
+    margin-left: 0; /* Reset */
+    /* Adjust for list items specifically */
+    margin-left: 0; 
+  }
+  
+  /* Re-apply safe padding logic */
+  p, li {
+    margin-left: 0;
+    padding: 6px 10px;
+    width: fit-content; /* Optional: Wraps text snugly, or remove for full width */
+    display: block; /* Ensures box model works */
+    width: auto;
+  }
+  
+  li {
+    display: list-item;
+  }
+
+  p:hover, li:hover {
+    border-color: #58a6ff; /* Tech Blue */
+    background: rgba(88, 166, 255, 0.08);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    transform: translateY(-2px) scale(1.005);
+    z-index: 10; /* Bring to front */
+  }
+}

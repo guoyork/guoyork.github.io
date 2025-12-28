@@ -11,24 +11,25 @@ redirect_from:
 
 # Basic information
 
-* **Name**: Yuxuan Lu
-* **Gender**: Male
-* **Birth Date**: 07/27/2000
-* **Birth Place**: Hangzhou, China
+* **Name**: Yongkang Guo
+* **Email**: yongkang_guo@pku.edu.cn
+* **Research Interests**: Robust Aggregation, Information Design, Computational Economics
 
 Education
 ======
 
-* 09/2022-present: Center on Frontiers of Computing Studies, Peking University
-    * Doctor of Philosophy
-* 09/2018-06/2022: School of Electronics Engineering and Computer Science, Peking University
-    * Bachelor of Computer Science and Technology
-* 09/2015-06/2018: Hangzhou No.2 High School of Zhejiang Province
+* **09/2021 - Present**: School of Computer Science, Peking University
+    * Doctor of Philosophy (PhD)
+    * Advisor: Prof. Yuqing Kong
+* **09/2017 - 06/2021**: Peking University
+    * Bachelor of Science
+    * GPA: 3.73/4.00 (Top 15%)
+* **2014 - 2017**: High School (China)
 
 Skills
 ======
-* Language skills: TOEFL R: 30 L: 30 S: 24 W: 28 Total: 112
-* Computer skills: C/C++, Python, Matlab, Solidity, Ocaml
+* **Research**: Robust Aggregation, Information Design, Computational Economics
+* **Languages**: English, Chinese
 
 Publications
 ======
@@ -41,20 +42,3 @@ Teaching
   <ul>{% for post in site.teaching %}
     {% include archive-single-cv.html %}
   {% endfor %}</ul>
-# Awards
-
-* 09/2021 John Hopcroft Scholarship of Peking University
-* 12/2020 Gold Medal in 2020 ACM-ICPC Asia Regional Contest Shanghai Site
-* 09/2020 Second-class Scholarship of Peking University
-* 12/2019 Gold Medal in 2019 ACM-ICPC Asia Regional Contest Shanghai Site
-* 12/2019 Gold Medal in 2019 ACM-ICPC Asia Regional Contest Shenyang Site
-* 09/2019 Third-class Scholarship of Peking University
-* 12/2018 Gold Medal in 2018 ACM-ICPC Asia Regional Contest Shenyang Site
-* 09/2018 Freshman scholarship of Peking University
-* 07/2017 Gold Medal in the 34th National Olympiad in Informatics (NOI 2017)
-* 07/2016 Gold Medal in the 33th National Olympiad in Informatics (NOI 2016)
-
-Contact
-======
-
-My E-mail address is `yx_lu@pku.edu.cn`.
