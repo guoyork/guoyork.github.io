@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yongkang Guo - Home</title>
+    <style>
+        :root {
+            /* Dark Mode (Default) */
+            --bg-color: #050505;
+            --card-bg: #111111;
+            --text-main: #e0e0e0;
+            --text-muted: #a0a0a0;
+            --accent-color: #00f3ff; /* Cyan tech glow */
+            --border-color: #333;
+            --font-tech: 'Courier New', Courier, monospace;
+            --font-main: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            --shadow-color: rgba(0, 243, 255, 0.15);
+            --title-shadow: 0 0 10px rgba(0, 243, 255, 0.3);
+        }
+
+        [data-theme="light"] {
+            /* Light Mode Overrides */
+            --bg-color: #ffffff;
+            --card-bg: #f8f9fa;
+            --text-main: #333333;
+            --text-muted: #555555;
+            --accent-color: #0056b3; /* Darker blue for light mode */
+            --border-color: #e0e0e0;
+            --shadow-color: rgba(0, 86, 179, 0.15);
+            --title-shadow: none;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: var(--font-main);
+            line-height: 1.6;
+            padding: 2rem;
+            max-width: 900px;
+            margin: 0 auto;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        header {
+            text-align: left;
+            margin-bottom: 3rem;
+            padding: 2rem 0;
+            border-bottom: 1px solid var(--border-color);
+            position: relative;
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .header-content {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .top-nav {
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+            width: 100%;
+            justify-content: space-between;
+        }
+
+        /* ... existing nav styles ... */
+
+        .profile-container {
+            margin-top: 3rem; /* Adjusted for nav space */
+            margin-bottom: 1rem;
+            flex-shrink: 0;
+        }
+
+        h1 {
+            font-family: var(--font-tech);
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--accent-color);
+            text-shadow: var(--title-shadow);
+            margin-top: 0; /* Reset margin top */
+            transition: color 0.3s ease, text-shadow 0.3s ease;
+        }
+        
+        @media (max-width: 600px) {
+             header {
+                flex-direction: column;
+                text-align: center;
+             }
+             .profile-container {
+                margin-top: 4rem; /* More space on mobile below nav */
+             }
+        }
+
+        .nav-links a {
+            font-family: var(--font-tech);
+            color: var(--text-muted);
+            text-decoration: none;
+            margin-right: 1rem;
+            font-size: 1.1rem;
+            transition: color 0.2s;
+            border: none;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--accent-color);
+        }
+
+        .theme-switch {
+            background: none;
+            border: 1px solid var(--border-color);
+            color: var(--text-main);
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+            font-family: var(--font-tech);
+            border-radius: 4px;
+            transition: all 0.2s ease;
+        }
+        
+        .theme-switch:hover {
+            border-color: var(--accent-color);
+            color: var(--accent-color);
+        }
+
+        .profile-container {
+            margin-top: 3rem;
+            margin-bottom: 1rem;
+            flex-shrink: 0;
+        }
+
+        .profile-img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--accent-color);
+            box-shadow: 0 0 25px var(--shadow-color);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .profile-img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 35px var(--shadow-color);
+        }
+
+        h1 {
+            font-family: var(--font-tech);
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--accent-color);
+            text-shadow: var(--title-shadow);
+            margin-top: 0;
+            transition: color 0.3s ease, text-shadow 0.3s ease;
+        }
+
+        .contact-info {
+            color: var(--text-muted);
+            font-family: var(--font-tech);
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 600px) {
+             header {
+                flex-direction: column;
+                text-align: center;
+             }
+             .profile-container {
+                margin-top: 4rem;
+             }
+             .header-content {
+                text-align: center;
+             }
+        }
+
+        main {
+            display: flex;
+            flex-direction: column;
+            gap: 4rem;
+        }
+
+        section {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 2rem;
+            position: relative;
+            transition: all 0.3s ease;
+            overflow: hidden;
+        }
+
+        /* Hover Animation: Lift and Glow */
+        section:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-color);
+            box-shadow: 0 0 20px var(--shadow-color);
+        }
+
+        section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background-color: var(--accent-color);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        section:hover::before {
+            opacity: 1;
+        }
+
+        h2 {
+            font-family: var(--font-tech);
+            color: var(--accent-color);
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 0.5rem;
+            display: inline-block;
+        }
+
+        h3 {
+            font-family: var(--font-tech);
+            color: var(--text-main);
+            margin-top: 2rem;
+            margin-bottom: 1.5rem;
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        .content-block {
+            margin-bottom: 2.5rem;
+        }
+
+        .content-block:last-child {
+            margin-bottom: 0;
+        }
+
+        .date {
+            font-family: var(--font-tech);
+            color: var(--accent-color);
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .title {
+            font-weight: bold;
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .subtitle {
+            color: var(--text-muted);
+            font-style: italic;
+            margin-bottom: 1rem;
+        }
+
+        p {
+            margin-bottom: 1.5rem;
+        }
+        
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        li {
+            margin-bottom: 1.2rem;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        li::before {
+            content: ">";
+            position: absolute;
+            left: 0;
+            color: var(--accent-color);
+            font-family: var(--font-tech);
+        }
+
+        a {
+            color: var(--accent-color);
+            text-decoration: none;
+            border-bottom: 1px dotted var(--accent-color);
+            transition: color 0.2s;
+        }
+
+        a:hover {
+            opacity: 0.8;
+            border-bottom-style: solid;
+        }
+        
+        [data-theme="light"] a:hover {
+            color: #003d80;
+        }
+
+        /* Specific styles for skills */
+        .skills-list {
+            margin-left: 0;
+        }
+        
+        .skills-list li {
+            padding-left: 0;
+        }
+        
+        .skills-list li::before {
+            content: none;
+        }
+        
+        .skill-category {
+            font-weight: bold;
+            color: var(--accent-color);
+            margin-right: 0.5rem;
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 1rem;
+            }
+            h1 {
+                font-size: 2rem;
+            }
+            .top-nav {
+                position: relative;
+                flex-direction: column;
+                gap: 1rem;
+                margin-bottom: 1rem;
+            }
+            header {
+                padding-top: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="top-nav">
+            <div class="nav-links">
+                <a href="index.html" class="active">Home</a>
+                <a href="publications.html">Publications</a>
+            </div>
+            <button class="theme-switch" id="theme-toggle" title="Toggle Theme">
+                [ Light Mode ]
+            </button>
+        </div>
+        
+        <div class="profile-container">
+            <!-- Replace 'pic/photo.jpg' with your actual photo file -->
+            <img src="pic/photo.jpg" alt="Yongkang Guo" class="profile-img" onerror="this.onerror=null; this.src='https://ui-avatars.com/api/?name=Yongkang+Guo&background=111&color=00f3ff&size=256&font-size=0.33'">
+        </div>
+        
+        <div class="header-content">
+            <h1>郭永康 Yongkang Guo</h1>
+            <div class="contact-info">
+                <p>yongkang_guo@pku.edu.cn | Ph.D. Student @ PKU</p>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- About Section -->
+        <section class="about">
+            <h2>About Me</h2>
+            
+            <!-- Chinese Version First -->
+            <div class="content-block">
+                <p>
+                    我是北京大学计算机学院的五年级博士生，本科于2021年毕业于北京大学元培学院以及信息科学技术学院图灵班。我的导师是<a href="https://cfcs.pku.edu.cn/yuqkong/">孔雨晴副教授</a>，我的研究兴趣包括<strong>鲁棒信息聚合</strong>、<strong>机制设计</strong>以及<strong>大模型应用。
+
+                </p>
+            </div>
+
+            <!-- English Version Follows -->
+            <div class="content-block" style="margin-top: 2rem; border-top: 1px dashed var(--border-color); padding-top: 2rem;">
+                <p>
+                    I am a fifth-year PhD student at the <a href="https://cs.pku.edu.cn/">School of Computer Science</a> in <a href="https://www.pku.edu.cn/">Peking University</a> (2021-).
+                    I received my Bachelor's degree from <a href="https://yuanpei.pku.edu.cn/">Yuanpei College</a> (Turing Class), Peking University in 2021. I am advised by <a href="https://cfcs.pku.edu.cn/yuqkong/">Prof. Yuqing Kong</a> and my research interests are <strong>Robust Information Aggregation</strong>, <strong>Mechanism Design</strong> and <strong>Application of Large Language Models</strong>.
+                </p>
+            </div>
+        </section>
+
+        <!-- Publications Section -->
+        <section class="publications">
+            <h2>Recent Publications</h2>
+            
+            <div class="content-block">
+                <h3>2025</h3>
+                <ul>
+                    <li>
+                        <a href="https://guoyork.me/publication/algorithm_aggregation_ec25">Algorithmic Robust Forecast Aggregation</a><br>
+                        <strong>Yongkang Guo</strong>, Jason D. Hartline, Zhihuan Huang, Yuqing Kong, Anant Shah, Fang-Yi Yu.<br>
+                        <em>Accepted by ACM Conference on Economics and Computation (EC), 2025.</em>
+                    </li>
+                    <li>
+                        <a href="https://guoyork.me/publication/rating_aggregation_www25">Mitigating the Participation Bias by Balancing Extreme Ratings</a><br>
+                        <strong>Yongkang Guo</strong>, Yuqing Kong, Jialiang Liu.<br>
+                        <em>Accepted by the ACM Web Conference (WWW), 2025.</em>
+                    </li>
+                    <li>
+                        <a href="https://guoyork.me/publication/adversarial_aggregation_www25">Robust Aggregation with Adversarial Experts</a><br>
+                        <strong>Yongkang Guo</strong>, Yuqing Kong.<br>
+                        <em>Accepted by the ACM Web Conference (WWW), 2025.</em>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="content-block">
+                <h3>2023</h3>
+                <ul>
+                    <li>
+                        <a href="https://guoyork.me/publication/online_platforms_www23">Near-Optimal Experimental Design Under the Budget Constraint in Online Platforms</a><br>
+                        <strong>Yongkang Guo*</strong>, Yuan Yuan, Jinshan Zhang, Yuqing Kong, Zhihua Zhu, Zheng Cai.<br>
+                        <em>Accepted by the ACM Web Conference (WWW), 2023.</em>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="content-block">
+                <h3>Preprints / Under Review</h3>
+                <ul>
+                    <li>
+                        <strong>PMIScore: An Unsupervised Approach to Quantify Dialogue Engagement</strong><br>
+                        Y. Guo, Y. Kong, Z. Huang.
+                    </li>
+                    <li>
+                        <strong>Modularity and Mutual Information in Networks: Two Sides of the Same Coin</strong><br>
+                        Q. Wang, Y. Guo, Z. Huang, Y. Kong.
+                    </li>
+                    <li>
+                        <strong>How Gold to Make the Golden Snitch: Designing the "Game Changer" in Esports</strong><br>
+                        Z. Huang, Y. Lu, Y. Guo, Y. Kong.
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section class="skills">
+            <h2>Technical Skills</h2>
+            <div class="content-block">
+                <ul class="skills-list">
+                    <li><span class="skill-category">Languages:</span> Python, C++/C, Matlab</li>
+                    <li><span class="skill-category">Frameworks:</span> PyTorch, Hugging Face Transformers</li>
+                    <li><span class="skill-category">Research:</span> Algorithmic Game Theory, Large Language Models (LLMs), AI Agent, Optimization Theory, Causal Inference</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Education Section -->
+        <section class="education">
+            <h2>Education</h2>
+            
+            <div class="content-block">
+                <div class="date">09/2021 - 2026 (Expected)</div>
+                <div class="title">Ph.D. Candidate in Computer Software and Theory</div>
+                <div class="subtitle">Center on Frontiers of Computing Studies, Peking University</div>
+            </div>
+
+            <div class="content-block">
+                <div class="date">09/2017 - 06/2021</div>
+                <div class="title">B.S. in AI (PKU Turing Class)</div>
+                <div class="subtitle">Yuanpei College, Peking University</div>
+                <p>GPA: 3.73/4.00 (Top 15%)</p>
+            </div>
+            
+            <div class="content-block">
+                <div class="date">09/2014 - 06/2017</div>
+                <div class="title">Zhenhai High School</div>
+                <div class="subtitle">Zhejiang</div>
+            </div>
+        </section>
+
+        <!-- Awards Section -->
+        <section class="awards">
+            <h2>Awards</h2>
+            <div class="content-block">
+                <ul>
+                    <li>
+                        <span class="date">11/2025</span> National Scholarship
+                    </li>
+                    <li>
+                        <span class="date">11/2025</span> Merit Student of School of Computer Science, PKU
+                    </li>
+                    <li>
+                        <span class="date">09/2023</span> Outstanding Scientific Research Award of School of Computer Science
+                    </li>
+                    <li>
+                        <span class="date">11/2020</span> John Hopcroft Scholarship of Peking University
+                    </li>
+                    <li>
+                        <span class="date">12/2018</span> Houston BAA Scholarship of Peking University
+                    </li>
+                    <li>
+                        <span class="date">12/2017</span> The Third Prize of Freshman Scholarship of Peking University
+                    </li>
+                </ul>
+            </div>
+        </section>
+        
+        <!-- Internship Section -->
+        <section class="internship">
+            <h2>Internship Experience</h2>
+            <div class="content-block">
+                <div class="date">10/2025 - Present</div>
+                <div class="title">Poisson Lab, 2012 Labs, Huawei Technologies Co., Ltd.</div>
+                <p>Research on the design of Agent Memory Systems.</p>
+            </div>
+            
+            <div class="content-block">
+                <div class="date">11/2021 - 01/2022</div>
+                <div class="title">Experimental Science Group, Tencent</div>
+                <p>Experimental design for online advertising platforms under budget constraints (Published in WWW 2023).</p>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section class="projects">
+            <h2>Projects</h2>
+            
+            <div class="content-block">
+                <div class="date">2025</div>
+                <div class="title">Situation Puzzle Game</div>
+                <p>
+                    An automated "Turtle Soup" (Situation Puzzle) game based on Large Language Models (LLMs), developed with Flask.
+                    <br>
+                    Focused on Prompt Engineering and collecting scoring data for automated LLM evaluation.
+                    <br>
+                    <a href="http://elicit.info:8080/">http://elicit.info:8080/</a>
+                </p>
+            </div>
+            
+            <div class="content-block">
+                <div class="date">2019</div>
+                <div class="title">Information Elicitation Platform</div>
+                <p>
+                    An information-theoretic multi-functional online platform developed with Django.
+                    <br>
+                    Functions include teaching resource sharing, feedback collection, automated information aggregation, and data visualization.
+                    <br>
+                    Used for the Best Paper selection process in WINE 2020.
+                    <br>
+                    <a href="https://elicit.info/">https://elicit.info/</a>
+                </p>
+            </div>
+        </section>
+
+    </main>
+
+    <script>
+        // Theme Switcher Logic
+        const toggleBtn = document.getElementById('theme-toggle');
+        const body = document.body;
+        
+        // Check for saved preference
+        if (localStorage.getItem('theme') === 'light') {
+            body.setAttribute('data-theme', 'light');
+            toggleBtn.textContent = '[ Dark Mode ]';
+        }
+
+        toggleBtn.addEventListener('click', () => {
+            if (body.getAttribute('data-theme') === 'light') {
+                body.removeAttribute('data-theme');
+                toggleBtn.textContent = '[ Light Mode ]';
+                localStorage.setItem('theme', 'dark');
+            } else {
+                body.setAttribute('data-theme', 'light');
+                toggleBtn.textContent = '[ Dark Mode ]';
+                localStorage.setItem('theme', 'light');
+            }
+        });
+
+        // Simple script to add subtle random glitch effect to the title occasionally
+        const title = document.querySelector('h1');
+        
+        setInterval(() => {
+            if(Math.random() > 0.95) {
+                // Adjust colors for light/dark mode in the glitch
+                const isLight = body.getAttribute('data-theme') === 'light';
+                const color1 = 'red';
+                const color2 = 'blue';
+                const originalShadow = isLight ? 'none' : '0 0 10px rgba(0, 243, 255, 0.3)';
+                
+                title.style.textShadow = `2px 0 ${color1}, -2px 0 ${color2}`;
+                setTimeout(() => {
+                    title.style.textShadow = originalShadow;
+                }, 100);
+            }
+        }, 2000);
+    </script>
+</body>
+</html>
