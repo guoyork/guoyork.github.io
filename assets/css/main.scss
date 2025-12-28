@@ -1,94 +1,73 @@
----
----
-
-/*
- * This file controls what is imported from /_sass
- *
- * Note that the files are processed in the order they are imported, so they are partly
- * sorted by the dependencies. Also, the first two lines of the file are required by Jekyll.
- */
-
-@import
-    "vendor/breakpoint/breakpoint",
-
-    "themes",
-    "theme/default",
-    "theme/dark",
-
-    "include/mixins",
-    "vendor/susy/susy",
-
-    "layout/reset",
-    "layout/base",
-
-    "include/utilities",
-    "layout/tables",
-    "layout/buttons",
-    "layout/notices",
-    "layout/masthead",
-    "layout/navigation",
-    "layout/footer",
-    "syntax",
-
-    "layout/forms",
-
-    "layout/page",
-    "layout/archive",
-    "layout/sidebar",
-
-    "vendor/font-awesome/fontawesome",
-    "vendor/font-awesome/solid",
-    "vendor/font-awesome/brands",
-    "vendor/magnific-popup/magnific-popup"
-;
-
 /* ==========================================================================
    CUSTOM ANIMATIONS (TECH STYLE)
    ========================================================================== */
 
 .page__content {
-  /* Apply to paragraphs and list items */
+  /* 1. Generic Paragraphs and List Items */
   p, li {
     padding: 8px 12px;
-    margin-left: -12px; /* Offset the padding to keep alignment */
     border: 1px solid transparent;
     border-radius: 6px;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
     z-index: 1;
-    
-    /* Ensure list markers stay visible */
-    list-style-position: inside; 
+    /* Default spacing */
+    margin-bottom: 4px;
   }
 
-  /* Exclude nested lists from double-padding/margins if needed, 
-     but let's keep it simple for now. 
-     Fix list-style-position for li to avoid weird marker behavior inside the box */
-  li {
-    list-style-position: outside;
-    margin-left: 0; /* Reset */
-    /* Adjust for list items specifically */
-    margin-left: 0; 
-  }
-  
-  /* Re-apply safe padding logic */
-  p, li {
-    margin-left: 0;
-    padding: 6px 10px;
-    width: fit-content; /* Optional: Wraps text snugly, or remove for full width */
-    display: block; /* Ensures box model works */
-    width: auto;
-  }
-  
-  li {
-    display: list-item;
-  }
-
+  /* Hover effect for generic items */
   p:hover, li:hover {
-    border-color: #58a6ff; /* Tech Blue */
+    border-color: rgba(88, 166, 255, 0.5); /* Softer Tech Blue */
     background: rgba(88, 166, 255, 0.08);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-    transform: translateY(-2px) scale(1.005);
-    z-index: 10; /* Bring to front */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    transform: translateY(-1px);
+    z-index: 10;
+  }
+
+  /* 2. Publication/Talk Cards (.archive__item) 
+     These are larger blocks, so we style them distinctly */
+  .archive__item {
+    display: block;
+    padding: 20px;
+    margin-bottom: 24px; /* Space between cards */
+    background: rgba(255, 255, 255, 0.03); /* Very subtle fill */
+    border: 1px solid rgba(255, 255, 255, 0.1); /* Subtle border */
+    border-radius: 8px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .archive__item:hover {
+    border-color: #58a6ff; /* Strong Tech Blue on hover */
+    background: rgba(88, 166, 255, 0.12); /* Brighter fill */
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+    transform: translateY(-4px) scale(1.01);
+  }
+
+  /* RESET inner elements within .archive__item to prevent double-borders */
+  .archive__item p, 
+  .archive__item li {
+    border: none !important;
+    background: none !important;
+    box-shadow: none !important;
+    transform: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    pointer-events: none; /* Let the parent handle the hover */
+  }
+  
+  /* Restore pointer events for links inside cards */
+  .archive__item a {
+    pointer-events: auto;
+  }
+
+  /* Fix list nesting issues */
+  ul { padding-left: 20px; }
+  li { list-style-position: outside; }
+  
+  /* Remove bullets from the publication wrapper if it uses ul/li */
+  ul:has(.archive__item),
+  li:has(.archive__item) {
+    list-style: none;
+    padding-left: 0;
   }
 }

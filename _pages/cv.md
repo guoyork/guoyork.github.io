@@ -9,19 +9,21 @@ redirect_from:
 
 {% include base_path %}
 
-# Basic information
+# Basic Information
 
 * **Name**: Yongkang Guo
 * **Email**: yongkang_guo@pku.edu.cn
+* **Phone**: +86 18801239176
 * **Research Interests**: Robust Aggregation, Information Design, Computational Economics
 
 Education
 ======
 
-* **09/2021 - Present**: School of Computer Science, Peking University
+* **09/2021 - Present**: **Peking University**, School of Computer Science
     * Doctor of Philosophy (PhD)
     * Advisor: Prof. Yuqing Kong
-* **09/2017 - 06/2021**: Peking University
+    * Expected Graduation: 2026
+* **09/2017 - 06/2021**: **Peking University**
     * Bachelor of Science
     * GPA: 3.73/4.00 (Top 15%)
 * **2014 - 2017**: High School (China)
